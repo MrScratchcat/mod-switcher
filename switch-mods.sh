@@ -1,7 +1,7 @@
 cd
 sudo apt update 
 continue=0
-cmd=(dialog --menu "Please Select the version you want to install:" 22 76 16)
+cmd=(dialog --menu "Please Select the version you want your mods on:" 22 76 16)
 options=(
 1 "version 1.19.3 fabric"
 2 "Version 1.19.2 fabric"
@@ -113,7 +113,7 @@ do
     esac
 done
 if [ $continue -eq 0 ]; then
-    echo "you didnt made a choice, stop script" 
+    echo "no mods folder found, try to run minecraft with your mod client!" 
     exit 1
 else
     exit
