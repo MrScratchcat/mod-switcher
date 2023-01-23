@@ -1,4 +1,6 @@
 # mod-switcher
+THIS IS FOR LINUX ONLY THERE WILL BE A VERSION FOR WINDOWS!
+
 this script can help you to switch to diffrend mods in for minecraft 
 
 to make this work you need to download dialog (sudo apt install dialog -y)
