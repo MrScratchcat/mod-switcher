@@ -1,8 +1,9 @@
+#!/bin/bash
 cd
-sudo apt update 
 continue=0
 cmd=(dialog --menu "Please Select the version you want your mods on:" 22 76 16)
 options=(
+0 "version 1.19.4 fabric"
 1 "version 1.19.3 fabric"
 2 "Version 1.19.2 fabric"
 3 "Version 1.18.2 fabric"
@@ -19,6 +20,15 @@ clear
 for choice in $choices
 do
     case $choice in
+    0)
+        #1.19.4
+        continue=1
+        cd ~/.minecraft/mods
+        rm *.jar
+        cd
+        cd ~/mods/1.19.4
+        cp *.jar ~/.minecraft/mods
+        ;;
     1)
         #1.19.3
         continue=1
@@ -113,8 +123,9 @@ do
     esac
 done
 if [ $continue -eq 0 ]; then
-    echo "no mods folder found, try to run minecraft with your mod client!" 
+    echo "no mods folder found, try to run minecraft with your mod client!"
     exit 1
 else
+    echo "switching mods was succesful!"
     exit
 fi
